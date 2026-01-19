@@ -44,16 +44,21 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 
+> **Note:** Installing PyAudio can be tricky on some systems.
+- macOS: `brew install portaudio`
+- Ubuntu: `sudo apt install portaudio19-dev`
+- Windows: Use a precompiled PyAudio wheel
+
 ---
 
 ## 🔑 Environment Variables
 
 This project uses a `.env` file to manage sensitive environment variables.
 
-Create a `.env` file in the root of the project and add your Anthropic API key where specified in the code:
+Inside of the `.env` file in the root of the project, add your Anthropic API key where specified in the code:
 
 ```env
-ANTHROPIC_API_KEY=your_api_key_here
+ANTHROPIC_API_KEY="Anthropic API Key Here"
 ```
 
 ⚠️ **Do not commit your `.env` file to Git.**  
@@ -62,6 +67,8 @@ Make sure `.env` is included in your `.gitignore`.
 ---
 
 ## 🚀 Usage
+
+Run the main script:
 
 ```bash
 python main.py
@@ -76,6 +83,62 @@ The program will:
 
 ---
 
+## 🗂️ Example Project Flow
+
+```
+Microphone Input
+       ↓
+Audio Recording (PyAudio)
+       ↓
+WAV File (wave)
+       ↓
+Speech Transcription
+       ↓
+Anthropic API
+       ↓
+AI-Generated Summary
+```
+
+---
+
+## 📝 Example Output
+
+**Transcript:**
+> Today we discussed project timelines, upcoming deadlines, and blockers.
+
+**Summary:**
+> The speaker reviewed project timelines, deadlines, and current obstacles.
+
+---
+
+## 🧠 Use Cases
+
+- Voice notes
+- Meeting summaries
+- Lecture recaps
+- Personal voice journaling
+- Voice-based assistants
+
+---
+
+## ⚠️ Notes & Limitations
+
+- Audio quality depends on microphone input
+- Transcription accuracy depends on the chosen STT model
+- API usage may incur costs depending on your Anthropic plan
+
+---
+
+## 📌 Future Improvements
+
+- Real-time transcription
+- Speaker diarization
+- Timestamped summaries
+- GUI or web interface
+- Support for multiple audio formats
+
+---
+
 ## 📄 License
 
-MIT License
+MIT License — feel free to use, modify, and distribute.
