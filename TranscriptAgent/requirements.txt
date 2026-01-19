@@ -1,0 +1,7 @@
+pyaudio
+SpeechRecognition
+langchain_anthropic
+langchain_core
+langchain_classic
+langchain
+dotenv
